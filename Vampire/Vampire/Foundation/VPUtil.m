@@ -10,11 +10,9 @@
 
 
 
-#pragma mark - Util functions for file managerment
+#pragma mark -
+#pragma mark File Managerment
 
-/**
- * Get path of the file in the document folder.
- */
 NSString* filePathAtDocument(NSString *filename)
 {
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -23,9 +21,6 @@ NSString* filePathAtDocument(NSString *filename)
 	return filePath;
 }
 
-/**
- * Get path of the file in main bundle
- */
 NSString* filePathAtMainBundle(NSString *filename)
 {
     NSArray *components = [filename componentsSeparatedByString:@"."];    
@@ -36,17 +31,11 @@ NSString* filePathAtMainBundle(NSString *filename)
 	return [[NSBundle mainBundle] pathForResource:prefix ofType:suffix];
 }
 
-/**
- * Get file URL from path
- */
 NSURL* fileURL(NSString *path)
 {    
     return [[[NSURL alloc] initFileURLWithPath:path] autorelease];
 }
 
-/**
- * Check if file is already exist at path
- */
 bool isFileExistAtPath(NSString *filePath)
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -61,11 +50,9 @@ bool isFileExistAtPath(NSString *filePath)
 }
 
 
-# pragma mark - Easy way to read and write plist file
+# pragma mark -
+# pragma mark Read and write plist file
 
-/**
- * Get array from plist file in main bundle
- */
 NSArray* arrayFromMainBundle(NSString *filename)
 {    
     NSArray *arrayForReturn = nil;
@@ -77,9 +64,6 @@ NSArray* arrayFromMainBundle(NSString *filename)
     return arrayForReturn;
 }
 
-/**
- * Get dictionary from plist file in main bundle
- */
 NSDictionary* dictionaryFromMainBundle(NSString *filename)
 {
     NSDictionary *dictionaryForReturn = nil;
@@ -116,12 +100,14 @@ BOOL saveDictionaryToDocument(NSString *filename, NSDictionary *dictionary)
 }
 
 
-#pragma mark - encoding
+#pragma mark -
+#pragma mark Encoding
+
 NSString* encodeURL(NSString *string)
 {
-    NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, /* allocator */
+    NSString* escaped_value = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                                   (CFStringRef)string,
-                                                                                  NULL, /* charactersToLeaveUnescaped */
+                                                                                  NULL, 
                                                                                   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
                                                                                   kCFStringEncodingUTF8);
     NSString *stringForReturn = [[escaped_value copy] autorelease];
@@ -150,13 +136,40 @@ NSData* dataUsingEncoding(NSString *string, NSStringEncoding encoding)
 	return [string dataUsingEncoding:encoding];
 }
 
-
-#pragma mark - device
-
-bool isIPad(void)
-{
-    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+NSString* base64forData(NSData *theData) {
+    
+    const uint8_t* input = (const uint8_t*)[theData bytes];
+    NSInteger length = [theData length];
+    
+    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    
+    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t* output = (uint8_t*)data.mutableBytes;
+    
+    NSInteger i;
+    for (i=0; i < length; i += 3) {
+        NSInteger value = 0;
+        NSInteger j;
+        for (j = i; j < (i + 3); j++) {
+            value <<= 8;
+            
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        
+        NSInteger theIndex = (i / 3) * 4;
+        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
+        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
+        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
+        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
+    }
+    
+    return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
 }
+
+
+#pragma mark - Device
 
 void deviceInfo(void)
 {         
@@ -167,6 +180,15 @@ void deviceInfo(void)
     NSLog(@"Retina Display: %@", isRetinaDisplay()?@"YES":@"NO");
 }
 
+bool isIPad(void)
+{
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+}
+
+double systemVersion(void)
+{
+    return [[[UIDevice currentDevice] systemVersion] doubleValue];
+}
 
 NSString* deviceName(void)
 {
@@ -188,11 +210,6 @@ NSString* deviceSystemVersion(void)
     return [UIDevice currentDevice].systemVersion;
 }
 
-double systemVersion(void)
-{
-    return [[[UIDevice currentDevice] systemVersion] doubleValue];
-}
-
 bool isRetinaDisplay(void)
 {    
     return ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] == YES && [[UIScreen mainScreen] scale] == 2.00);
@@ -200,86 +217,11 @@ bool isRetinaDisplay(void)
 
 
 
-//#ifdef DEVICE_CAMERA
-//
-//bool isCaptureAvailable(void) {
-//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        return NO;
-//    }   
-//    NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-//    return [mediaTypes containsObject:(NSString *)kUTTypeImage];
-//}
-//
-//
-//
-//#endif
 
 
 
-void showAlertBox(NSString *title, NSString *message)
-{
-	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title                              
-                                                        message:message 
-                                                       delegate:nil 
-                                              cancelButtonTitle:@"OK" 
-                                              otherButtonTitles:nil];
-	[alertView show];
-	[alertView release];
-}
-
-NSString* currTime(void)
-{
-    NSDate *now = [NSDate date];
-    
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit;
-    NSDateComponents *dd = [cal components:unitFlags fromDate:now]; 
-        int y = [dd year];
-        int m = [dd month];
-        int d = [dd day];
-    //    int week = [dd weekday];
-    
-    int hour = [dd hour];
-    int minute = [dd minute];
-    int second = [dd second];
-    
-    return [NSString stringWithFormat:@"%d-%d-%d %d:%d:%d", y, m, d, hour, minute, second];
-}
-
-NSDate* dateByDate(int year, int month, int day)
-{
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
-    [components setDay:day];
-    [components setMonth:month];
-    [components setYear:year];
-    return [calendar dateFromComponents:components];
-}
-
-
-
-
-#pragma mark - local notification
-void localNotification(void)
-{
-    UIApplication *application = [UIApplication sharedApplication];
-    application.applicationIconBadgeNumber = 0;//应用程序右上角的数字=0（消失）  
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];//取消所有的通知  
-    //------通知；  
-
-    UILocalNotification *notification=[[[UILocalNotification alloc] init] autorelease];   
-    if (notification!=nil) {//判断系统是否支持本地通知  
-        notification.fireDate=[NSDate dateWithTimeIntervalSinceNow:kCFCalendarUnitDay];//本次开启立即执行的周期  
-        notification.repeatInterval=kCFCalendarUnitDay;//循环通知的周期  
-        notification.timeZone=[NSTimeZone defaultTimeZone];  
-        notification.alertBody=@"Pop up message!";//弹出的提示信息  
-        notification.applicationIconBadgeNumber=1; //应用程序的右上角小数字  
-        notification.soundName= UILocalNotificationDefaultSoundName;//本地化通知的声音  
-        notification.alertAction = NSLocalizedString(@"距離對嗎？？！", nil);  //弹出的提示框按钮  
-        [[UIApplication sharedApplication]   scheduleLocalNotification:notification];  
-    }  
-}
-
+# pragma mark -
+# pragma Regular Expression
 
 bool isEmailFormat(NSString *email)
 {
@@ -326,7 +268,7 @@ bool isPasswordFormat(NSString *password)
 
 
 
-# pragma mark - open URL
+# pragma mark - Open URL
 
 void openURL(NSURL *url) 
 {
@@ -339,13 +281,14 @@ void openRateURL(NSString *appId)
     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:url]];
 }
 
-void openTelURL(NSString *tel)
+void openPhoneCallURL(NSString *tel)
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", tel]];
     [[UIApplication sharedApplication] openURL:url];
 }
 
-# pragma mark - NSCoder
+# pragma mark -
+# pragma mark Serialize NSCoder
 
 bool archive(id object, NSString *path)
 {
@@ -360,7 +303,31 @@ id unarchiveObjectFromPath(NSString *path)
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 }
 
-# pragma mark - Notification
+# pragma mark -
+# pragma mark Local Notification
+
+void localNotification(void)
+{
+    UIApplication *application = [UIApplication sharedApplication];
+    application.applicationIconBadgeNumber = 0;//应用程序右上角的数字=0（消失）  
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//取消所有的通知  
+    //------通知；  
+    
+    UILocalNotification *notification=[[[UILocalNotification alloc] init] autorelease];   
+    if (notification!=nil) {//判断系统是否支持本地通知  
+        notification.fireDate=[NSDate dateWithTimeIntervalSinceNow:kCFCalendarUnitDay];//本次开启立即执行的周期  
+        notification.repeatInterval=kCFCalendarUnitDay;//循环通知的周期  
+        notification.timeZone=[NSTimeZone defaultTimeZone];  
+        notification.alertBody=@"Pop up message!";//弹出的提示信息  
+        notification.applicationIconBadgeNumber=1; //应用程序的右上角小数字  
+        notification.soundName= UILocalNotificationDefaultSoundName;//本地化通知的声音  
+        notification.alertAction = NSLocalizedString(@"距離對嗎？？！", nil);  //弹出的提示框按钮  
+        [[UIApplication sharedApplication]   scheduleLocalNotification:notification];  
+    }  
+}
+
+# pragma mark -
+# pragma mark KVO Notification
 
 void addNotification(id observer, SEL sel, NSString *name, id obj)
 {
@@ -382,37 +349,47 @@ void postNotification(NSString *name)
     [[NSNotificationCenter defaultCenter] postNotificationName:name object:nil];
 }
 
+# pragma mark -
+# pragma mark Utility
 
-NSString* base64forData(NSData *theData) {
+void showAlertBox(NSString *title, NSString *message)
+{
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title                              
+                                                        message:message 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"OK" 
+                                              otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
+}
+
+NSString* currTime(void)
+{
+    NSDate *now = [NSDate date];
     
-    const uint8_t* input = (const uint8_t*)[theData bytes];
-    NSInteger length = [theData length];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit;
+    NSDateComponents *dd = [cal components:unitFlags fromDate:now]; 
+    int y = [dd year];
+    int m = [dd month];
+    int d = [dd day];
+    //    int week = [dd weekday];
     
-    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    int hour = [dd hour];
+    int minute = [dd minute];
+    int second = [dd second];
     
-    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
-    uint8_t* output = (uint8_t*)data.mutableBytes;
-    
-    NSInteger i;
-    for (i=0; i < length; i += 3) {
-        NSInteger value = 0;
-        NSInteger j;
-        for (j = i; j < (i + 3); j++) {
-            value <<= 8;
-            
-            if (j < length) {
-                value |= (0xFF & input[j]);
-            }
-        }
-        
-        NSInteger theIndex = (i / 3) * 4;
-        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
-        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
-        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
-        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
-    }
-    
-    return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+    return [NSString stringWithFormat:@"%d-%d-%d %d:%d:%d", y, m, d, hour, minute, second];
+}
+
+NSDate* dateByDate(int year, int month, int day)
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+    [components setDay:day];
+    [components setMonth:month];
+    [components setYear:year];
+    return [calendar dateFromComponents:components];
 }
 
 void saveLog(NSString *log)
@@ -443,6 +420,4 @@ void saveLog(NSString *log)
         NSLog(@"save logger failed!");
     }
 }
-
-
 

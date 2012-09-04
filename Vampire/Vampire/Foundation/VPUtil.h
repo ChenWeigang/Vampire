@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-// file managerment
+// File Managerment
 NSString*       filePathAtDocument(NSString *filename);
 NSString*       filePathAtMainBundle(NSString *filename);
 NSURL*          fileURL(NSString *path);
 bool            isFileExistAtPath(NSString *filePath);
 
-// simple read & write plist file
+// Read and write plist file
 NSArray*        arrayFromMainBundle(NSString *fileName);
 NSDictionary*   dictionaryFromMainBundle(NSString *fileName);
 
@@ -23,7 +23,7 @@ NSDictionary*   loadDictionaryFromDocument(NSString *filename);
 BOOL            saveArrayToDocument(NSString *filename, NSArray *array);
 BOOL            saveDictionaryToDocument(NSString *filename, NSDictionary *dictionary);
 
-// encoding
+// Encoding
 NSString*       encodeURL(NSString *string);
 NSString*       stringUsingEncodingUTF8(NSData *data);
 NSString*       stringUsingEncoding(NSData *data, NSStringEncoding encoding);
@@ -32,7 +32,7 @@ NSData*         dataUsingEncoding(NSString *string, NSStringEncoding encoding);
 NSString*       base64forData(NSData *theData);
 
 
-// device
+// Device
 NSString*       deviceName(void);
 NSString*       deviceModel(void);
 NSString*       deviceSystemName(void);
@@ -51,31 +51,27 @@ bool            isAccountFormat(NSString *account);
 bool            isPasswordFormat(NSString *password);
 bool            isFirstLetterNumber(NSString *number);
 
-// open URL
-void openURL(NSURL *url);
-void openRateURL(NSString *appId);
-void openTelURL(NSString *tel);
+// Open URL
+void            openURL(NSURL *url);
+void            openRateURL(NSString *appId);
+void            openPhoneCallURL(NSString *tel);
 
-
-// others
-void            showAlertBox(NSString *title, NSString *message);
-NSString*       currTime(void);
-NSDate*         dateByDate(int year, int month, int day);
-BOOL            saveEventToCalandar(NSDate *startDate, NSDate *endDate, NSString *title, NSString *desc);
-
-
-// NSCoder
+// Serialize NSCoder
 bool            archive(id object, NSString *path);
 id              unarchive(NSString *path);
 
-// Notification
+// Local Notification
 void            localNotification(void);
 
+// KVO Notification
 void            addNotification(id observer, SEL sel, NSString *name, id obj);
 void            removeNotification(id observer, NSString *name, id obj);
 void            postNotification(NSString *name);
 
-
-void saveLog(NSString *log);
+// Utility
+void            showAlertBox(NSString *title, NSString *message);
+NSString*       currTime(void);
+NSDate*         dateByDate(int year, int month, int day);
+void            saveLog(NSString *log);
 
 
