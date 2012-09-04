@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "Reachability.h"
+#import "Reachability.h"
 
 
 
-//BOOL isInternectAvailable(void);
+BOOL isInternectAvailable(void);
 

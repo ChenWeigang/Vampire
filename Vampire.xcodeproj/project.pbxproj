@@ -24,7 +24,7 @@
 		25958DFA15F4A9770098705A /* VPItemListLocalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC115F4A9770098705A /* VPItemListLocalCache.m */; };
 		25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC415F4A9770098705A /* NSString+Extension.m */; };
 		25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC615F4A9770098705A /* VPAddressBook.m */; };
-		25958DFD15F4A9770098705A /* VPEventKit+SaveToCalandar.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC815F4A9770098705A /* VPEventKit+SaveToCalandar.m */; };
+		25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC815F4A9770098705A /* EKEventStore+Extension.m */; };
 		25958DFE15F4A9770098705A /* VPReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCA15F4A9770098705A /* VPReachability.m */; };
 		25958DFF15F4A9770098705A /* VPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCC15F4A9770098705A /* VPRequest.m */; };
 		25958E0015F4A9770098705A /* VPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCE15F4A9770098705A /* VPUtil.m */; };
@@ -49,6 +49,7 @@
 		25958E1915F4AA1D0098705A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25958E1815F4AA1D0098705A /* MobileCoreServices.framework */; };
 		25958E1B15F4AA290098705A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25958E1A15F4AA290098705A /* MediaPlayer.framework */; };
 		25958E1D15F4AA3D0098705A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25958E1C15F4AA3D0098705A /* EventKit.framework */; };
+		25D1FC2415F5A5BA00FD875F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D1FC2315F5A5BA00FD875F /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,8 +84,8 @@
 		25958DC415F4A9770098705A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		25958DC515F4A9770098705A /* VPAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPAddressBook.h; sourceTree = "<group>"; };
 		25958DC615F4A9770098705A /* VPAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPAddressBook.m; sourceTree = "<group>"; };
-		25958DC715F4A9770098705A /* VPEventKit+SaveToCalandar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VPEventKit+SaveToCalandar.h"; sourceTree = "<group>"; };
-		25958DC815F4A9770098705A /* VPEventKit+SaveToCalandar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VPEventKit+SaveToCalandar.m"; sourceTree = "<group>"; };
+		25958DC715F4A9770098705A /* EKEventStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKEventStore+Extension.h"; sourceTree = "<group>"; };
+		25958DC815F4A9770098705A /* EKEventStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EKEventStore+Extension.m"; sourceTree = "<group>"; };
 		25958DC915F4A9770098705A /* VPReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPReachability.h; sourceTree = "<group>"; };
 		25958DCA15F4A9770098705A /* VPReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPReachability.m; sourceTree = "<group>"; };
 		25958DCB15F4A9770098705A /* VPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPRequest.h; sourceTree = "<group>"; };
@@ -127,6 +128,8 @@
 		25958E1815F4AA1D0098705A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		25958E1A15F4AA290098705A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		25958E1C15F4AA3D0098705A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		25D1FC2215F5A5BA00FD875F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		25D1FC2315F5A5BA00FD875F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,12 +255,13 @@
 		25958DC215F4A9770098705A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				25D1FC2115F5A5BA00FD875F /* Reachability */,
 				25958DC315F4A9770098705A /* NSString+Extension.h */,
 				25958DC415F4A9770098705A /* NSString+Extension.m */,
 				25958DC515F4A9770098705A /* VPAddressBook.h */,
 				25958DC615F4A9770098705A /* VPAddressBook.m */,
-				25958DC715F4A9770098705A /* VPEventKit+SaveToCalandar.h */,
-				25958DC815F4A9770098705A /* VPEventKit+SaveToCalandar.m */,
+				25958DC715F4A9770098705A /* EKEventStore+Extension.h */,
+				25958DC815F4A9770098705A /* EKEventStore+Extension.m */,
 				25958DC915F4A9770098705A /* VPReachability.h */,
 				25958DCA15F4A9770098705A /* VPReachability.m */,
 				25958DCB15F4A9770098705A /* VPRequest.h */,
@@ -301,6 +305,15 @@
 				25958DEB15F4A9770098705A /* VPSearchLightLabel.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		25D1FC2115F5A5BA00FD875F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				25D1FC2215F5A5BA00FD875F /* Reachability.h */,
+				25D1FC2315F5A5BA00FD875F /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,7 +391,7 @@
 				25958DFA15F4A9770098705A /* VPItemListLocalCache.m in Sources */,
 				25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */,
 				25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */,
-				25958DFD15F4A9770098705A /* VPEventKit+SaveToCalandar.m in Sources */,
+				25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */,
 				25958DFE15F4A9770098705A /* VPReachability.m in Sources */,
 				25958DFF15F4A9770098705A /* VPRequest.m in Sources */,
 				25958E0015F4A9770098705A /* VPUtil.m in Sources */,
@@ -396,6 +409,7 @@
 				25958E0C15F4A9770098705A /* VPMaskView.m in Sources */,
 				25958E0D15F4A9770098705A /* VPMultipleChoiceView.m in Sources */,
 				25958E0E15F4A9770098705A /* VPSearchLightLabel.m in Sources */,
+				25D1FC2415F5A5BA00FD875F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

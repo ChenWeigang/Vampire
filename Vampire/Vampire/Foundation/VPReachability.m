@@ -8,30 +8,30 @@
 
 #import "VPReachability.h"
 
-//BOOL isInternectAvailable(void)
-//{    
-//    Reachability *curReach = [Reachability reachabilityForInternetConnection];
-//    NetworkStatus netStatus = [curReach currentReachabilityStatus];
-//    //    BOOL connectionRequired= [curReach connectionRequired];
-//    NSString* statusString= @"";
-//    switch (netStatus)
-//    {
-//        case NotReachable:
-//        {
-//            statusString = @"Access Not Available";
-//            return NO;
-//        }
-//            
-//        case ReachableViaWWAN:
-//        {
-//            statusString = @"Reachable WWAN";
-//            return YES;
-//        }
-//        case ReachableViaWiFi:
-//        {
-//            statusString= @"Reachable WiFi";
-//            return YES;
-//        }
-//    }
-//    return NO;
-//}
+BOOL isInternectAvailable(void)
+{    
+    Reachability *curReach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus netStatus = [curReach currentReachabilityStatus];
+    //    BOOL connectionRequired= [curReach connectionRequired];
+    NSString* statusString= @"";
+    switch (netStatus)
+    {
+        case NotReachable:
+        {
+            statusString = @"Access Not Available";
+            return NO;
+        }
+            
+        case ReachableViaWWAN:
+        {
+            statusString = @"Reachable WWAN";
+            return YES;
+        }
+        case ReachableViaWiFi:
+        {
+            statusString= @"Reachable WiFi";
+            return YES;
+        }
+    }
+    return NO;
+}

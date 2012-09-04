@@ -29,6 +29,7 @@ NSString*       stringUsingEncodingUTF8(NSData *data);
 NSString*       stringUsingEncoding(NSData *data, NSStringEncoding encoding);
 NSData*         dataUsingEncodingUTF8(NSString *string);
 NSData*         dataUsingEncoding(NSString *string, NSStringEncoding encoding);
+NSString*       base64forData(NSData *theData);
 
 
 // device
@@ -60,29 +61,19 @@ void openTelURL(NSString *tel);
 void            showAlertBox(NSString *title, NSString *message);
 NSString*       currTime(void);
 NSDate*         dateByDate(int year, int month, int day);
-
-BOOL saveEventToCalandar(NSDate *startDate, NSDate *endDate, NSString *title, NSString *desc);
+BOOL            saveEventToCalandar(NSDate *startDate, NSDate *endDate, NSString *title, NSString *desc);
 
 
 // NSCoder
 bool            archive(id object, NSString *path);
 id              unarchive(NSString *path);
 
-// camera
-//#define DEVICE_CAMERA
-//#ifdef DEVICE_CAMERA
-//#import <MobileCoreServices/MobileCoreServices.h>
-//bool            isCaptureAvailable(void);
-//bool            isVideoRecordingAvailable(void);
-//#endif
-
+// Notification
 void            localNotification(void);
 
-void addNotification(id observer, SEL sel, NSString *name, id obj);
-void removeNotification(id observer, NSString *name, id obj);
-void postNotification(NSString *name);
-
-NSString* base64forData(NSData *theData);
+void            addNotification(id observer, SEL sel, NSString *name, id obj);
+void            removeNotification(id observer, NSString *name, id obj);
+void            postNotification(NSString *name);
 
 
 void saveLog(NSString *log);
