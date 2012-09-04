@@ -1,6 +1,6 @@
 //
 //  VPUtil.m
-//  ThirdParty
+//  Vampire
 //
 //  Created by Chen Weigang on 12-3-12.
 //  Copyright (c) 2012年 Fugu Mobile Limited. All rights reserved.
@@ -169,7 +169,8 @@ NSString* base64forData(NSData *theData) {
 }
 
 
-#pragma mark - Device
+#pragma mark -
+#pragma mark Device
 
 void deviceInfo(void)
 {         
@@ -216,12 +217,8 @@ bool isRetinaDisplay(void)
 }
 
 
-
-
-
-
 # pragma mark -
-# pragma Regular Expression
+# pragma mark Regular Expression
 
 bool isEmailFormat(NSString *email)
 {
@@ -266,9 +263,8 @@ bool isPasswordFormat(NSString *password)
 }
 
 
-
-
-# pragma mark - Open URL
+# pragma mark -
+# pragma mark Open URL
 
 void openURL(NSURL *url) 
 {

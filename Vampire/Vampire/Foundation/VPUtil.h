@@ -1,6 +1,6 @@
 //
 //  VPUtil.h
-//  ThirdParty
+//  Vampire
 //
 //  Created by Chen Weigang on 12-3-12.
 //  Copyright (c) 2012年 Fugu Mobile Limited. All rights reserved.
@@ -17,20 +17,18 @@ bool            isFileExistAtPath(NSString *filePath);
 // Read and write plist file
 NSArray*        arrayFromMainBundle(NSString *fileName);
 NSDictionary*   dictionaryFromMainBundle(NSString *fileName);
-
 NSArray*        loadArrayFromDocument(NSString *filename);
 NSDictionary*   loadDictionaryFromDocument(NSString *filename);
 BOOL            saveArrayToDocument(NSString *filename, NSArray *array);
 BOOL            saveDictionaryToDocument(NSString *filename, NSDictionary *dictionary);
 
 // Encoding
+NSString*       base64 (NSData *theData);
 NSString*       encodeURL(NSString *string);
 NSString*       stringUsingEncodingUTF8(NSData *data);
 NSString*       stringUsingEncoding(NSData *data, NSStringEncoding encoding);
 NSData*         dataUsingEncodingUTF8(NSString *string);
 NSData*         dataUsingEncoding(NSString *string, NSStringEncoding encoding);
-NSString*       base64forData(NSData *theData);
-
 
 // Device
 NSString*       deviceName(void);
@@ -42,8 +40,7 @@ bool            isRetinaDisplay(void);
 void            deviceInfo(void);
 bool            isIPad(void);
 
-
-// regular expressions
+// Regular expressions
 bool            isEmailFormat(NSString *email);
 bool            isCountryCodeFormat(NSString *countryCode);
 bool            isMobileFormat(NSString *mobile);
@@ -72,6 +69,6 @@ void            postNotification(NSString *name);
 void            showAlertBox(NSString *title, NSString *message);
 NSString*       currTime(void);
 NSDate*         dateByDate(int year, int month, int day);
-void            saveLog(NSString *log);
+void            saveLog(NSString *log); // enable share in info.plist
 
 

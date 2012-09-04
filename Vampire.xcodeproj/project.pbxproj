@@ -23,7 +23,7 @@
 		25958DF915F4A9770098705A /* VPImageLocalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DBF15F4A9770098705A /* VPImageLocalCache.m */; };
 		25958DFA15F4A9770098705A /* VPItemListLocalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC115F4A9770098705A /* VPItemListLocalCache.m */; };
 		25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC415F4A9770098705A /* NSString+Extension.m */; };
-		25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC615F4A9770098705A /* VPAddressBook.m */; };
+		25958DFC15F4A9770098705A /* AddressBook+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC615F4A9770098705A /* AddressBook+Extension.m */; };
 		25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC815F4A9770098705A /* EKEventStore+Extension.m */; };
 		25958DFF15F4A9770098705A /* VPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCC15F4A9770098705A /* VPRequest.m */; };
 		25958E0015F4A9770098705A /* VPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCE15F4A9770098705A /* VPUtil.m */; };
@@ -81,8 +81,8 @@
 		25958DC115F4A9770098705A /* VPItemListLocalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPItemListLocalCache.m; sourceTree = "<group>"; };
 		25958DC315F4A9770098705A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		25958DC415F4A9770098705A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		25958DC515F4A9770098705A /* VPAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPAddressBook.h; sourceTree = "<group>"; };
-		25958DC615F4A9770098705A /* VPAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPAddressBook.m; sourceTree = "<group>"; };
+		25958DC515F4A9770098705A /* AddressBook+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "AddressBook+Extension.h"; sourceTree = "<group>"; };
+		25958DC615F4A9770098705A /* AddressBook+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddressBook+Extension.m"; sourceTree = "<group>"; };
 		25958DC715F4A9770098705A /* EKEventStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKEventStore+Extension.h"; sourceTree = "<group>"; };
 		25958DC815F4A9770098705A /* EKEventStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EKEventStore+Extension.m"; sourceTree = "<group>"; };
 		25958DCB15F4A9770098705A /* VPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPRequest.h; sourceTree = "<group>"; };
@@ -254,10 +254,10 @@
 			children = (
 				25958DC315F4A9770098705A /* NSString+Extension.h */,
 				25958DC415F4A9770098705A /* NSString+Extension.m */,
-				25958DC515F4A9770098705A /* VPAddressBook.h */,
-				25958DC615F4A9770098705A /* VPAddressBook.m */,
 				25958DC715F4A9770098705A /* EKEventStore+Extension.h */,
 				25958DC815F4A9770098705A /* EKEventStore+Extension.m */,
+				25958DC515F4A9770098705A /* AddressBook+Extension.h */,
+				25958DC615F4A9770098705A /* AddressBook+Extension.m */,
 				25958DCB15F4A9770098705A /* VPRequest.h */,
 				25958DCC15F4A9770098705A /* VPRequest.m */,
 				25958DCD15F4A9770098705A /* VPUtil.h */,
@@ -377,7 +377,7 @@
 				25958DF915F4A9770098705A /* VPImageLocalCache.m in Sources */,
 				25958DFA15F4A9770098705A /* VPItemListLocalCache.m in Sources */,
 				25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */,
-				25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */,
+				25958DFC15F4A9770098705A /* AddressBook+Extension.m in Sources */,
 				25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */,
 				25958DFF15F4A9770098705A /* VPRequest.m in Sources */,
 				25958E0015F4A9770098705A /* VPUtil.m in Sources */,
