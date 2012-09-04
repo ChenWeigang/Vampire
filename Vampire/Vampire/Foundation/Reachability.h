@@ -145,6 +145,9 @@ extern NSString *const kReachabilityChangedNotification;
 
 @property (copy) NSString *key; // Atomic because network operations are asynchronous.
 
+// Use to check WWAN or WIFI status
++ (BOOL) isConnectionAvailable; 
+
 // Designated Initializer.
 - (Reachability *) initWithReachabilityRef: (SCNetworkReachabilityRef) ref;
 

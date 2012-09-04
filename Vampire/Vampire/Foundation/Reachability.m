@@ -213,6 +213,22 @@ static void logNetworkStatus_(const char *name, int line, NetworkStatus status) 
 	
 } // dealloc
 
++ (BOOL) isConnectionAvailable
+{
+    Reachability *curReach = [Reachability reachabilityForInternetConnection];
+    NetworkStatus netStatus = [curReach currentReachabilityStatus];
+    switch (netStatus)
+    {
+        case NotReachable:
+            return NO; // Access Not Available
+        case ReachableViaWWAN:
+            return YES; // Reachable WWAN
+        case ReachableViaWiFi:
+            return YES; // Reachable WiFi
+    }
+    return NO;
+}
+
 
 - (Reachability *) initWithReachabilityRef: (SCNetworkReachabilityRef) ref 
 {

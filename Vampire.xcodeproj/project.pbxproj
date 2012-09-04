@@ -25,7 +25,6 @@
 		25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC415F4A9770098705A /* NSString+Extension.m */; };
 		25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC615F4A9770098705A /* VPAddressBook.m */; };
 		25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DC815F4A9770098705A /* EKEventStore+Extension.m */; };
-		25958DFE15F4A9770098705A /* VPReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCA15F4A9770098705A /* VPReachability.m */; };
 		25958DFF15F4A9770098705A /* VPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCC15F4A9770098705A /* VPRequest.m */; };
 		25958E0015F4A9770098705A /* VPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DCE15F4A9770098705A /* VPUtil.m */; };
 		25958E0115F4A9770098705A /* CALayer+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 25958DD115F4A9770098705A /* CALayer+Animation.m */; };
@@ -86,8 +85,6 @@
 		25958DC615F4A9770098705A /* VPAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPAddressBook.m; sourceTree = "<group>"; };
 		25958DC715F4A9770098705A /* EKEventStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKEventStore+Extension.h"; sourceTree = "<group>"; };
 		25958DC815F4A9770098705A /* EKEventStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EKEventStore+Extension.m"; sourceTree = "<group>"; };
-		25958DC915F4A9770098705A /* VPReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPReachability.h; sourceTree = "<group>"; };
-		25958DCA15F4A9770098705A /* VPReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPReachability.m; sourceTree = "<group>"; };
 		25958DCB15F4A9770098705A /* VPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPRequest.h; sourceTree = "<group>"; };
 		25958DCC15F4A9770098705A /* VPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPRequest.m; sourceTree = "<group>"; };
 		25958DCD15F4A9770098705A /* VPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPUtil.h; sourceTree = "<group>"; };
@@ -261,8 +258,6 @@
 				25958DC615F4A9770098705A /* VPAddressBook.m */,
 				25958DC715F4A9770098705A /* EKEventStore+Extension.h */,
 				25958DC815F4A9770098705A /* EKEventStore+Extension.m */,
-				25958DC915F4A9770098705A /* VPReachability.h */,
-				25958DCA15F4A9770098705A /* VPReachability.m */,
 				25958DCB15F4A9770098705A /* VPRequest.h */,
 				25958DCC15F4A9770098705A /* VPRequest.m */,
 				25958DCD15F4A9770098705A /* VPUtil.h */,
@@ -384,7 +379,6 @@
 				25958DFB15F4A9770098705A /* NSString+Extension.m in Sources */,
 				25958DFC15F4A9770098705A /* VPAddressBook.m in Sources */,
 				25958DFD15F4A9770098705A /* EKEventStore+Extension.m in Sources */,
-				25958DFE15F4A9770098705A /* VPReachability.m in Sources */,
 				25958DFF15F4A9770098705A /* VPRequest.m in Sources */,
 				25958E0015F4A9770098705A /* VPUtil.m in Sources */,
 				25958E0115F4A9770098705A /* CALayer+Animation.m in Sources */,
