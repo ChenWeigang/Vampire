@@ -49,6 +49,7 @@
 		25958E1B15F4AA290098705A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25958E1A15F4AA290098705A /* MediaPlayer.framework */; };
 		25958E1D15F4AA3D0098705A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25958E1C15F4AA3D0098705A /* EventKit.framework */; };
 		25D1FC2715F5A63E00FD875F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 25D1FC2615F5A63C00FD875F /* Reachability.m */; };
+		25DF2FC715F6EDE500548B1C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25DF2FC615F6EDE500548B1C /* OpenGLES.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +82,7 @@
 		25958DC115F4A9770098705A /* VPItemListLocalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPItemListLocalCache.m; sourceTree = "<group>"; };
 		25958DC315F4A9770098705A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		25958DC415F4A9770098705A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		25958DC515F4A9770098705A /* AddressBook+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "AddressBook+Extension.h"; sourceTree = "<group>"; };
+		25958DC515F4A9770098705A /* AddressBook+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AddressBook+Extension.h"; sourceTree = "<group>"; };
 		25958DC615F4A9770098705A /* AddressBook+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddressBook+Extension.m"; sourceTree = "<group>"; };
 		25958DC715F4A9770098705A /* EKEventStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKEventStore+Extension.h"; sourceTree = "<group>"; };
 		25958DC815F4A9770098705A /* EKEventStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EKEventStore+Extension.m"; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		25958E1C15F4AA3D0098705A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		25D1FC2515F5A63B00FD875F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		25D1FC2615F5A63C00FD875F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		25DF2FC615F6EDE500548B1C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25DF2FC715F6EDE500548B1C /* OpenGLES.framework in Frameworks */,
 				25958E1D15F4AA3D0098705A /* EventKit.framework in Frameworks */,
 				25958E1B15F4AA290098705A /* MediaPlayer.framework in Frameworks */,
 				25958E1915F4AA1D0098705A /* MobileCoreServices.framework in Frameworks */,
@@ -170,6 +173,7 @@
 		25958D7C15F4A94B0098705A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25DF2FC615F6EDE500548B1C /* OpenGLES.framework */,
 				25958E1C15F4AA3D0098705A /* EventKit.framework */,
 				25958E1A15F4AA290098705A /* MediaPlayer.framework */,
 				25958E1815F4AA1D0098705A /* MobileCoreServices.framework */,

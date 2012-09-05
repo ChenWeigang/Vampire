@@ -10,6 +10,7 @@
 #import <OpenGLES/EAGL.h>
 
 @interface UIView(Extension)
-- (UIImage *)glViewToUIImage;
+
+- (UIImage *)glViewToUIImage; // Opengl view transform to UIImage
 
 @end
