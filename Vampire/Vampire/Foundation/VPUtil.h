@@ -73,3 +73,27 @@ void            saveLog(NSString *log); // enable share in info.plist
 
 void            throwException(NSString *ExceptionName, NSString *reason, id userInfo);
 
+// Multable Arguments
+void            multableArguments(int start, ...);
+
+/* 
+ // Multable Arguments for Objective C
+ 
+ [self arrayWithObjs:@"AAA", @"BBB", @"CCC", nil];
+ 
+ - (void)arrayWithObjs:(id)firstObj, ... NS_REQUIRES_NIL_TERMINATION
+ {
+    va_list argList;  
+    id statement = firstObj;
+    id arg = firstObj;  
+    va_start(argList, firstObj); 
+ 
+    if(statement)  
+    {   
+        do {
+            NSLog(@"obj = %@", arg);            
+        } while ((arg = va_arg(argList, id))); // 取下一个
+        va_end(argList); // argList = nil;  
+    }   
+ }
+ */
