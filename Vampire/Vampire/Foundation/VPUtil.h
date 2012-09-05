@@ -71,4 +71,5 @@ NSString*       currTime(void);
 NSDate*         dateByDate(int year, int month, int day);
 void            saveLog(NSString *log); // enable share in info.plist
 
+void            throwException(NSString *ExceptionName, NSString *reason, id userInfo);
 

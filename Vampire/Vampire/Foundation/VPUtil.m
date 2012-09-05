@@ -417,3 +417,8 @@ void saveLog(NSString *log)
     }
 }
 
+void throwException(NSString *exceptionName, NSString *reason, id userInfo)
+{
+    @throw [NSException exceptionWithName:exceptionName reason:reason userInfo:userInfo];
+}
+

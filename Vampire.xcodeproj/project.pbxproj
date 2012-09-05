@@ -256,6 +256,8 @@
 		25958DC215F4A9770098705A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				25D1FC2515F5A63B00FD875F /* Reachability.h */,
+				25D1FC2615F5A63C00FD875F /* Reachability.m */,
 				25958DC315F4A9770098705A /* NSString+Extension.h */,
 				25958DC415F4A9770098705A /* NSString+Extension.m */,
 				25958DC715F4A9770098705A /* EKEventStore+Extension.h */,
@@ -266,8 +268,6 @@
 				25958DCC15F4A9770098705A /* VPRequest.m */,
 				25958DCD15F4A9770098705A /* VPUtil.h */,
 				25958DCE15F4A9770098705A /* VPUtil.m */,
-				25D1FC2515F5A63B00FD875F /* Reachability.h */,
-				25D1FC2615F5A63C00FD875F /* Reachability.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
