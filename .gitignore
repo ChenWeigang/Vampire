@@ -1,5 +1,5 @@
-Vampire/Vampire/.DS_Store
-Vampire.xcodeproj/project.xcworkspace/xcuserdata/bbb.xcuserdatad/UserInterfaceState.xcuserstate
+*.DS_Store
+*.xcuserstate
 # Xcode
 build/*
 *.pbxuser
@@ -15,4 +15,3 @@ build/*
 xcuserdata
 profile
 *.moved-aside
-*.DS_Store
