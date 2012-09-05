@@ -81,7 +81,7 @@
 		25958DC115F4A9770098705A /* VPItemListLocalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPItemListLocalCache.m; sourceTree = "<group>"; };
 		25958DC315F4A9770098705A /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		25958DC415F4A9770098705A /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		25958DC515F4A9770098705A /* AddressBook+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "AddressBook+Extension.h"; sourceTree = "<group>"; };
+		25958DC515F4A9770098705A /* AddressBook+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AddressBook+Extension.h"; sourceTree = "<group>"; };
 		25958DC615F4A9770098705A /* AddressBook+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AddressBook+Extension.m"; sourceTree = "<group>"; };
 		25958DC715F4A9770098705A /* EKEventStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EKEventStore+Extension.h"; sourceTree = "<group>"; };
 		25958DC815F4A9770098705A /* EKEventStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EKEventStore+Extension.m"; sourceTree = "<group>"; };
@@ -252,6 +252,8 @@
 		25958DC215F4A9770098705A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				25D1FC2515F5A63B00FD875F /* Reachability.h */,
+				25D1FC2615F5A63C00FD875F /* Reachability.m */,
 				25958DC315F4A9770098705A /* NSString+Extension.h */,
 				25958DC415F4A9770098705A /* NSString+Extension.m */,
 				25958DC715F4A9770098705A /* EKEventStore+Extension.h */,
@@ -262,8 +264,6 @@
 				25958DCC15F4A9770098705A /* VPRequest.m */,
 				25958DCD15F4A9770098705A /* VPUtil.h */,
 				25958DCE15F4A9770098705A /* VPUtil.m */,
-				25D1FC2515F5A63B00FD875F /* Reachability.h */,
-				25D1FC2615F5A63C00FD875F /* Reachability.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
