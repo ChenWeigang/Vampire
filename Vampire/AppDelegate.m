@@ -7,13 +7,14 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import "VPUtil.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+
 
 - (void)dealloc
 {
@@ -23,8 +24,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    NSLog(@"Test done! Next step create a new branch!");
+{    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];

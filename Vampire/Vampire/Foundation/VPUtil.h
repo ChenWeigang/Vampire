@@ -72,6 +72,31 @@ NSDate*         dateByDate(int year, int month, int day);
 void            saveLog(NSString *log); // enable share in info.plist
 
 void            throwException(NSString *ExceptionName, NSString *reason, id userInfo);
+ 
+// Multable Arguments
+void            multableArguments(int start, ...);
+
+/* 
+ // Multable Arguments for Objective C
+ 
+ [self arrayWithObjs:@"AAA", @"BBB", @"CCC", nil];
+ 
+ - (void)arrayWithObjs:(id)firstObj, ... NS_REQUIRES_NIL_TERMINATION
+ {
+    va_list argList;  
+    id statement = firstObj;
+    id arg = firstObj;  
+    va_start(argList, firstObj); 
+ 
+    if(statement)  
+    {   
+        do {
+            NSLog(@"obj = %@", arg);            
+        } while ((arg = va_arg(argList, id))); // 取下一个
+        va_end(argList); // argList = nil;  
+    }   
+ }
+ */
 
 // blocks
 typedef double(^block_operation)(double count);
@@ -84,10 +109,13 @@ typedef double(^block_operation)(double count);
  dispatch_async(downloadQueue, ^{
  NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://images.weiphone.com/attachments/Day_091007/7_273287_8a05fce1c455e0c.jpg"]];
  dispatch_async(dispatch_get_main_queue(), ^{
-    UIImageView *imgv = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
-    [self.view addSubview:imgv];
-    [imgv release];
-    });
+ UIImageView *imgv = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+ [self.view addSubview:imgv];
+ [imgv release];
+ });
  });
  dispatch_release(downloadQueue); 
+ =======
+ 
  */
+
