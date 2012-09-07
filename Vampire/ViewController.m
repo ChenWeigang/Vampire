@@ -18,6 +18,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://images.weiphone.com/attachments/Day_091007/7_273287_8a05fce1c455e0c.jpg"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageView *imgv = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+            [self.view addSubview:imgv];
+            [imgv release];
+        });
+    });
+    dispatch_release(downloadQueue);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 - (void)viewDidUnload
